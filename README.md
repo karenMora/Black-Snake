@@ -1,5 +1,6 @@
 # Black-Snake
-- Part I - Introduction to threads in JAVA
+
+# Part I - Introduction to threads in JAVA
 
 * define the life cycle of a thread that prints the numbers between A and B on the screen.
 ![Alt text](I1.png)
@@ -14,7 +15,7 @@
 ![Alt text](I23run().png)
 
 
-- Part II - Black List Search Exercise
+# Part II - Black List Search Exercise
 
 * Create a Thread class that represents the life cycle of a thread that searches for a segment of the pool of available servers. Add to that class a method that allows you to ask the instances of it (the threads) how many occurrences of malicious servers it has found or found.
  
@@ -22,13 +23,13 @@
 
 ![Alt text]()
 
-- Part III - Discussion
+# Part III - Discussion
 * How could the implementation be modified to minimize the number of queries in these cases? 
 
 * What new element would this bring to the problem?
 
 
-- Part IV - Performance Evaluation
+# Part IV - Performance Evaluation
 * A single thread.
 ![Alt text]()
 
@@ -60,7 +61,11 @@
 
 
 # Snake Race
-- Part 1
-- Part 2
-- Part 3
+
+
+# Part 1
+
+# Part 2
+
+# Part 3
 
