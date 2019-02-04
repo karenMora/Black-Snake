@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  */
 public class HostBlackListsValidator {
 
-    private static final int BLACK_LIST_ALARM_COUNT=5;
+    public static final int BLACK_LIST_ALARM_COUNT=5;
     
     /**
      * Check the given host's IP address in all the available black lists,

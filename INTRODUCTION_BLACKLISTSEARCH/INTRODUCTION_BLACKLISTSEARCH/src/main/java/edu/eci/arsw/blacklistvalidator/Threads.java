@@ -5,6 +5,9 @@
  */
 package edu.eci.arsw.blacklistvalidator;
 
+import edu.eci.arsw.spamkeywordsdatasource.HostBlacklistsDataSourceFacade;
+import static edu.eci.arsw.blacklistvalidator.HostBlackListsValidator.BLACK_LIST_ALARM_COUNT;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -12,8 +15,14 @@ import java.util.List;
  * @author 2092692
  */
 public class Threads extends Thread{
+    String ip;
+    LinkedList<Integer> blackListOcurrences=new LinkedList<>();
     
     public Threads(){
+    }
+
+    Threads(String a) {
+        ip=a;
     }
     
     /**
@@ -30,9 +39,16 @@ public class Threads extends Thread{
      * busca un segmento del grupo de servidores disponibles.
      */
     public void run(){
-        HostBlackListsValidator hblv=new HostBlackListsValidator();
-        List<Integer> blackListOcurrences=hblv.checkHost("200.24.34.55");
-        System.out.println("\n");
-        System.out.println("Los Servidores disponibles son: "+blackListOcurrences);
+        HostBlacklistsDataSourceFacade skds=HostBlacklistsDataSourceFacade.getInstance();
+        int checkedListsCount=0;
+        int ocurrencesCount=0;
+        
+        for (int i=0;i<skds.getRegisteredServersCount() && ocurrencesCount<BLACK_LIST_ALARM_COUNT;i++){
+            checkedListsCount++;
+            if (skds.isInBlackListServer(i, ip)){
+                blackListOcurrences.add(i);
+                ocurrencesCount++;
+            }
+        }    
     }
 }

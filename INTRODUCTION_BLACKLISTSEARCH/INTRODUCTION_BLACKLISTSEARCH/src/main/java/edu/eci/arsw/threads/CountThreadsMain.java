@@ -11,14 +11,15 @@ package edu.eci.arsw.threads;
  */
 public class CountThreadsMain {
     
-    public static void main(String a[]){
-        Thread h1 =new CountThread(0, 100);
-        Thread h2 =new CountThread(99, 200);
-        Thread h3 =new CountThread(200,300);
+    public static void main(String a[]) throws InterruptedException{
+        CountThread h1,h2,h3;
+        h1 =new CountThread(0, 100);
+        h2 =new CountThread(99, 200);
+        h3 =new CountThread(200,300);
         
-        h1.run();
-        h2.run();
-        h3.run();
+        h1.start();
+        h2.start();
+        h3.start();
         
     }
     
