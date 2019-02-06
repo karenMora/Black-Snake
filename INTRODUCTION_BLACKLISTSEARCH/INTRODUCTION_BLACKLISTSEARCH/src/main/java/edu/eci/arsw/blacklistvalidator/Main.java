@@ -17,6 +17,7 @@ public class Main {
         HostBlackListsValidator hblv=new HostBlackListsValidator();
         List<Integer> blackListOcurrences=hblv.checkHost("200.24.34.55");
         
+        //int cantHilos=(Runtime.getRuntime().availableProcessors());
         int cantHilos=50;
         Thread[] arrayHilos=new Thread[cantHilos];
         for(int i=0; i<cantHilos;i++){
