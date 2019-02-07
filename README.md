@@ -96,8 +96,10 @@ SnakeRace is an autonomous version, multi-snake of the famous game called 'snake
 
 
 - An incorrect or inappropriate use of collections, considering its concurrent handling(For this increase the game speed and execute it multiples times until an error has been raised).
+![Alt text](PARTE1.png)
+![Alt text](PARTE2.png)
 
----> I did not make any mistakes and I repeated it several times
+
 
 
 - Unnecessary use of active waits
@@ -117,14 +119,23 @@ SnakeRace is an autonomous version, multi-snake of the famous game called 'snake
 - When the game has been paused, in some point of the screen you have to show 
 - the longest snake
 - The worst snake:(the first snake  dead)Remember that the pause of the snakes are not instantanious, and you have to guarantee that all the information showed is consistent.
+* Button
+![Alt text](botones.png)
 
-![Alt text]()
-![Alt text]()
-![Alt text]()
-![Alt text]()
-![Alt text]()
+* pausa
+![Alt text](/img/pauseNO.png)
+![Alt text](/img/pause.png)
+![Alt text](/img/pauseC.png)
 
+* Resume
+![Alt text](/img/resumeNo.png)
+![Alt text](/img/resumeA.png)
+![Alt text](/img/resumeB.png)
 
+* Start
+![Alt text](/img/startNo.png)
+![Alt text](/img/startA.png)
+![Alt text](/img/startB.png)
 
 
 Created by Karen Mora

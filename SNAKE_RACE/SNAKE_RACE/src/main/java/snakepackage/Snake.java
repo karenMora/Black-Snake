@@ -6,6 +6,8 @@ import java.util.Random;
 
 import enums.Direction;
 import enums.GridSize;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Snake extends Observable implements Runnable {
 
@@ -26,12 +28,17 @@ public class Snake extends Observable implements Runnable {
     private boolean isSelected = false;
     private int growing = 0;
     public boolean goal = false;
+    
+    public boolean cond;
+    public Object llave;
 
-    public Snake(int idt, Cell head, int direction) {
+    public Snake(int idt, Cell head, int direction, Object lock) {
         this.idt = idt;
         this.direction = direction;
         generateSnake(head);
-
+        
+        llave=lock;
+        
     }
 
     public boolean isSnakeEnd() {
@@ -63,6 +70,16 @@ public class Snake extends Observable implements Runnable {
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
+            }
+            
+            if(cond){
+                try{
+                    synchronized(llave){
+                        llave.wait();
+                    }
+                }catch(InterruptedException ex){
+                    Logger.getLogger(Snake.class.getName()).log(Level.SEVERE, null,ex);
+                }
             }
 
         }
