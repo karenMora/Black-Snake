@@ -83,6 +83,48 @@ SnakeRace is an autonomous version, multi-snake of the famous game called 'snake
 # Part 3
 
 
+1. Analyse the code in order to understand how the threads are being used to create an autonomous behavior in the N snakes
+
+
+
+2. Accordingly, and using the game logic, identify and write clearly (ANSWERS.txt file)
+
+- Possible race conditions
+---> At the moment when two or more snakes reach a specific "power" like the mouse, the arrow, the lightning or the firewall
+
+---> When a snake collides with the firewall it does not move again
+
+
+- An incorrect or inappropriate use of collections, considering its concurrent handling(For this increase the game speed and execute it multiples times until an error has been raised).
+
+---> I did not make any mistakes and I repeated it several times
+
+
+- Unnecessary use of active waits
+---> When all stop moving the game does not end, although the threads if they finish the main thread is still active.
+![Alt text](hilos.png)
+
+
+
+3. Identify critical regions associated with race conditions, and do something in order to eliminate them.Note that you have to synchronize strictly needed. In the answers document suggest the solution proposed for each item of the point 2. As the same way note that you don´t have to add more race conditions.
+
+---> When two snakes reach a mouse or an arrow or the ray must be synchronized and put something that is a key to access the corresponding method and thus change the state of the snake, which makes that only the first one that arrives has the change of state.
+
+---> When two snakes collide with a wall, it may only be assumed that one of them collides, then it must be synchronized so that the method stops the thread and informs the game so it can stop.
+
+
+4. As you can see, the game is incomplete. Write code in order to implement functionallities through buttons in the GUI to start / Pause / Resume the game: start the game if it has not started, Pause the game if it is on, Resume the game if it is suspended. Keep in mind:
+- When the game has been paused, in some point of the screen you have to show 
+- the longest snake
+- The worst snake:(the first snake  dead)Remember that the pause of the snakes are not instantanious, and you have to guarantee that all the information showed is consistent.
+
+![Alt text]()
+![Alt text]()
+![Alt text]()
+![Alt text]()
+![Alt text]()
+
+
 
 
 Created by Karen Mora
